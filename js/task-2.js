@@ -1,27 +1,19 @@
 class Storage {
-    #item;
+    #items;
 
     constructor(params) {
-        this.#item = params;
+        this.#items = params;
     }
 
-    getItems() { return this.#item; }
+    getItems() { return this.#items; }
 
-    addItem(newItem) { this.#item.push(newItem); }
+    addItem(newItem) { this.#items.push(newItem); }
 
     removeItem(itemToRemove) {
-        if (this.#item.indexOf(itemToRemove) > -1) { this.#item.splice(this.#item.indexOf(itemToRemove), 1); }
+        if (this.#items.indexOf(itemToRemove) > -1) { this.#items.splice(this.#items.indexOf(itemToRemove), 1); }
     }
 }
 
-
-// Створи клас Storage, який створюватиме об'єкти для управління складом товарів. 
-// Клас очікує лише один аргумент — початковий масив товарів, який записується до створеного об'єкта в приватну властивість items.
-// Оголоси наступні методи класу:
-// getItems() — повертає масив поточних товарів у приватній властивості items.
-//     addItem(newItem) — приймає новий товар newItem і додає його до масиву товарів у приватну властивість items об'єкта.
-// removeItem(itemToRemove) — приймає рядок з назвою товару itemToRemove і видаляє його з масиву товарів у приватній властивості 
-// items об'єкта.
 
 const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
